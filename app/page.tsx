@@ -9,7 +9,7 @@ import Link from 'next/link';
 export default function Home() {
   return (
     <MotionMain bgColor="bg-ggreen-normal">
-      <div className="-mt-14">
+      <div className="-mt-12">
         <MotionDiv mode="down" delay={0.4}>
           <PingDiv>
             <SvgIcon href={'world'} fill="#ffffff"></SvgIcon>
