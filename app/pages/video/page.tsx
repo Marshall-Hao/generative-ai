@@ -23,22 +23,21 @@ export default function Home() {
       </MotionDiv>
 
       <div className="mb-14 text-center">
-        <p className="text-3xl text-ggreen-normal">Please wait while your video <br /> is being generated...</p>
+        <p className="text-3xl text-ggreen-normal">
+          Please wait while your video <br /> is being generated...
+        </p>
       </div>
-      {/*
+
       <MotionDiv mode="down" delay={0.5} classNames="justify-self-end mt-auto">
         <Link href="/pages/last">
           <Button
-            width={'w-[516px]'}
+            width={'w-[516px] box relative overflow-hidden'}
             bg={'bg-ggreen-light'}
             text={'text-white'}>
             Next
           </Button>
         </Link>
-      </MotionDiv> */}
-      <Button width={'w-[516px] box relative overflow-hidden'} bg={'bg-ggreen-light'} text={'text-white'}>
-        Next
-      </Button>
+      </MotionDiv>
     </MotionMain>
   );
 }
