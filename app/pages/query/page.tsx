@@ -5,6 +5,7 @@ import MotionDiv from '@/components/common/MotionDiv';
 import Button from '@/components/common/Button';
 import Link from 'next/link';
 import PageHeader from '@/components/common/PageHeader';
+import Select from '@/components/common/Select';
 
 export default function Home() {
   return (
@@ -19,6 +20,10 @@ export default function Home() {
           capture the attention of two traveler segments
         </p>
       </MotionDiv>
+
+      {/* <Select
+        options={['Philippines', 'Singapore', 'Vietnam']}
+        title="Travel Destination"></Select> */}
     </MotionMain>
   );
 }
