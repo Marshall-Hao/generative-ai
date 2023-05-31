@@ -21,9 +21,21 @@ export default function Home() {
         </p>
       </MotionDiv>
 
+      <MotionDiv mode="down" delay={0.5} classNames="justify-self-end mt-auto">
+        <Link href="/pages/results">
+          <Button
+            width={'w-[516px]'}
+            bg={'bg-ggreen-normal'}
+            text={'text-white'}>
+            Next
+          </Button>
+        </Link>
+      </MotionDiv>
+
       {/* <Select
         options={['Philippines', 'Singapore', 'Vietnam']}
         title="Travel Destination"></Select> */}
+
     </MotionMain>
   );
 }

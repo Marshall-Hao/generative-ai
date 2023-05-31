@@ -19,6 +19,16 @@ module.exports = {
           normal: '#34A853',
           dark: '#0D652D'
         }
+      },
+      keyframes: {
+        fullSpin: {
+          '100%': {
+            transform: 'rotate(360deg)'
+          }
+        }
+      },
+      animation:{
+        fullSpin:'fullSpin 4s linear infinite'
       }
     },
   },

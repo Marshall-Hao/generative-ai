@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .box::before{
+    @apply content-[''] absolute bg-[conic-gradient(#0D652D_150deg,transparent_80deg)] w-[650px] h-[99px] rounded-full animate-fullSpin
+  }
+  .box::after{
+    @apply content-['Next'] text-white w-[94%] h-[94%] bg-[#C3E6CB] absolute top-[3%] left-[3%] flex justify-center items-center tracking-[2px] text-4xl rounded-full tracking-[2px]
+  }
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
