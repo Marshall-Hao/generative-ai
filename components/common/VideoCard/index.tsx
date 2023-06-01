@@ -17,7 +17,9 @@ const VideoCard: FC<TProps> = () => {
           </div>
         </div>
         <Button
+
           width={'w-[322px] h-[43px]'}
+
           bg={'bg-ggreen-normal'}
           text={'text-white text-[21px]'}>
           Book Now
