@@ -21,6 +21,30 @@ export default function Home() {
         </p>
       </MotionDiv>
 
+      <MotionDiv
+        classNames="mb-[200px] mt-36	flex w-8/12 flex-col	gap-y-20"
+        mode="down"
+        delay={0.4}>
+        <Select
+          options={['Philippines', 'Singapore', 'Vietnam']}
+          title="Travel Destination"></Select>
+        <Select
+          options={[
+            'Foodies',
+            'Adventure Seekers',
+            'Relaxation Lovers',
+            'Nature Goers',
+          ]}
+          title="Travel Audience Profile 1"></Select>
+        <Select
+          options={[
+            'Foodies',
+            'Adventure Seekers',
+            'Relaxation Lovers',
+            'Nature Goers',
+          ]}
+          title="Travel Audience Profile 2"></Select>
+      </MotionDiv>
       <MotionDiv mode="down" delay={0.5} classNames="justify-self-end mt-auto">
         <Link href="/pages/results">
           <Button
@@ -31,10 +55,6 @@ export default function Home() {
           </Button>
         </Link>
       </MotionDiv>
-
-      {/* <Select
-        options={['Philippines', 'Singapore', 'Vietnam']}
-        title="Travel Destination"></Select> */}
     </MotionMain>
   );
 }

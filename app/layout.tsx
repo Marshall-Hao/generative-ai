@@ -1,8 +1,11 @@
 import './globals.css';
-import { Inter } from 'next/font/google';
+import { Noto_Sans } from 'next/font/google';
 import Script from 'next/script';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Noto_Sans({
+  subsets: ['latin'],
+  weight: ['300', '500', '600', '700'],
+});
 
 export const metadata = {
   title: 'Generative AI',
@@ -16,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Script src="//at.alicdn.com/t/c/font_4094881_mhqh7hw4t7m.js"></Script>
+      <Script src="//at.alicdn.com/t/c/font_4094881_x3hwqppuud.js"></Script>
       <body
         className={`${inter.className} min-h-screen overflow-hidden bg-ggreen-xlight`}>
         {children}

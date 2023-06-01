@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 @layer utilities {
-  .box::before{
-    @apply content-[''] absolute bg-[conic-gradient(#0D652D_150deg,transparent_80deg)] w-[650px] h-[99px] rounded-full animate-fullSpin
+  .box::before {
+    @apply absolute h-[99px] w-[650px] animate-fullSpin rounded-full bg-[conic-gradient(#0D652D_150deg,transparent_80deg)] content-[''];
   }
-  .box::after{
-    @apply content-['Next'] text-white w-[94%] h-[94%] bg-[#C3E6CB] absolute top-[3%] left-[3%] flex justify-center items-center tracking-[2px] text-4xl rounded-full tracking-[2px]
+  .box::after {
+    @apply absolute left-[3%] top-[3%] flex h-[94%] w-[94%] items-center justify-center rounded-full bg-[#C3E6CB] text-4xl tracking-[2px] tracking-[2px] text-white content-['Next'];
   }
 }
 
@@ -33,4 +33,19 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb)); */
+}
+
+.rect-animation {
+  stroke-dasharray: 10 200;
+  stroke-dashoffset: -220;
+  animation: rect 5s linear infinite;
+}
+
+@keyframes rect {
+  from {
+    stroke-dasharray: 0 1300;
+  }
+  to {
+    stroke-dasharray: 1300 0;
+  }
 }
