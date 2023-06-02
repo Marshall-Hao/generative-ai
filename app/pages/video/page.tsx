@@ -61,15 +61,14 @@ export default function Home() {
               className="rect-animation"></rect>
           </svg>
           <Button
-            width={'w-[516px]'}   
+            width={'w-[516px]'}
+            height={'h-[89px]'}
             bg={'bg-ggreen-light'}
             text={'text-white'}>
             Next
           </Button>
-
         </MotionDiv>
       </Link>
-
     </MotionMain>
   );
 }

@@ -38,6 +38,7 @@ export default function Home() {
         <Link href="/">
           <Button
             width={'w-[516px]'}
+            height={'h-[89px]'}
             bg={'bg-ggreen-normal'}
             text={'text-white'}>
             Start Again

@@ -41,6 +41,7 @@ export default function Home() {
         <Link href="/pages/query">
           <Button
             width={'w-[388px]'}
+            height={'h-[89px]'}
             bg={'bg-ggreen-normal'}
             text={'text-white'}>
             Back
@@ -50,6 +51,7 @@ export default function Home() {
         <Link href="/pages/video">
           <Button
             width={'w-[388px]'}
+            height={'h-[89px]'}
             bg={'bg-ggreen-normal'}
             text={'text-white'}>
             Generate

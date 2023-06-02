@@ -51,6 +51,7 @@ export default function Home() {
         <Link href="/pages/results">
           <Button
             width={'w-[516px]'}
+            height={'h-[89px]'}
             bg={'bg-ggreen-normal'}
             text={'text-white'}>
             Next

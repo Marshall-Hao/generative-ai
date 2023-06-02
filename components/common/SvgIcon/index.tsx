@@ -1,6 +1,12 @@
 import { FC } from 'react';
 
-type SvgName = 'world' | 'location' | 'building' | 'chevronDown';
+type SvgName =
+  | 'world'
+  | 'location'
+  | 'building'
+  | 'chevronDown'
+  | 'results_icons'
+  | 'hotel_logo';
 
 type TProps = {
   href: SvgName;
