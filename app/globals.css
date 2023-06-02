@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: 'GoogleSans';
-  src: url('../public/GoogleSans/Regular.ttf');
-}
 @layer utilities {
 
   .box::before {
