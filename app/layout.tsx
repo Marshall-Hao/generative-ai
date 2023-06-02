@@ -1,11 +1,8 @@
 import './globals.css';
-import { Noto_Sans } from 'next/font/google';
+import localFont from 'next/font/local';
 import Script from 'next/script';
 
-const inter = Noto_Sans({
-  subsets: ['latin'],
-  weight: ['300', '500', '600', '700'],
-});
+const googleSans = localFont({ src: '../public/GoogleSans/Regular.ttf' });
 
 export const metadata = {
   title: 'Generative AI',
@@ -21,7 +18,7 @@ export default function RootLayout({
     <html lang="en">
       <Script src="//at.alicdn.com/t/c/font_4094881_zbyvch4tcd.js"></Script>
       <body
-        className={`${inter.className} min-h-screen overflow-hidden bg-ggreen-xlight`}>
+        className={`${googleSans.className} min-h-screen overflow-hidden bg-ggreen-xlight`}>
         {children}
       </body>
     </html>

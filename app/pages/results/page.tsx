@@ -14,7 +14,7 @@ export default function Home() {
         Generative AI recommendations <br /> for your selected audience segments
       </PageHeader>
 
-      <MotionDiv mode="left" delay={0.2} classNames="mx-auto mt-[188px]">
+      <MotionDiv mode="left" delay={0.2} classNames="mx-auto mt-36">
         <Results
           profile={'Foodie'}
           destination={'Singapore'}
@@ -37,7 +37,7 @@ export default function Home() {
       <MotionDiv
         mode="up"
         delay={0.2}
-        classNames="mt-24 flex w-[929px] justify-evenly">
+        classNames="flex w-[929px] justify-evenly mt-[149px]">
         <Link href="/pages/query">
           <Button
             width={'w-[388px]'}
