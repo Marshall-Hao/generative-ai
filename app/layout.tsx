@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Script src="//at.alicdn.com/t/c/font_4094881_x3hwqppuud.js"></Script>
+      <Script src="//at.alicdn.com/t/c/font_4094881_zbyvch4tcd.js"></Script>
       <body
         className={`${inter.className} min-h-screen overflow-hidden bg-ggreen-xlight`}>
         {children}

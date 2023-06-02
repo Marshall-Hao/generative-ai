@@ -31,7 +31,8 @@ export default function Home() {
         <Button
           bg={'bg-ggreen-xlight'}
           text={'text-ggreen-normal'}
-          width={'w-[516px]'}>
+          width={'w-[516px]'}
+          height={'h-[89px]'}>
           Start
         </Button>
       </Link>
