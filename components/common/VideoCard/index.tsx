@@ -2,11 +2,13 @@ import { FC } from 'react';
 import Button from '../Button';
 import SvgIcon from '../SvgIcon';
 
-// type TProps = {
-//   children: ReactNode;
-// };
+type TProps = {
+  videoUrl: string;
+};
 
-const VideoCard: FC<TProps> = () => {
+const VideoCard: FC<TProps> = ({ videoUrl }) => {
+  console.log('videoUrl', videoUrl);
+
   return (
     <div className="relative h-[779px] w-[438px] bg-[#596969]">
       <div className="flex justify-center">

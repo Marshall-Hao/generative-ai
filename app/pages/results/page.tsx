@@ -6,15 +6,40 @@ import Button from '@/components/common/Button';
 import Link from 'next/link';
 import PageHeader from '@/components/common/PageHeader';
 import Results from '@/components/common/Results';
+import useGenerativestroe from '@/store';
 
 export default function Home() {
+  const result = useGenerativestroe((state) => state.result);
+
+  console.log('result', result);
   return (
     <MotionMain bgColor="bg-ggreen-xlight">
       <PageHeader svg={<SvgIcon href="world" fill="#34A853"></SvgIcon>}>
         Generative AI recommendations <br /> for your selected audience segments
       </PageHeader>
 
-      <MotionDiv mode="left" delay={0.2} classNames="mx-auto mt-36">
+      {result?.audience_places?.map((ele, i) => {
+        return (
+          <>
+            <MotionDiv
+              mode="left"
+              delay={0.2}
+              classNames={`mx-auto ${i === 0 ? 'mt-36' : 'mt-[83px]'}`}
+              key={i}>
+              <Results
+                profile={ele.audience}
+                destination={result.destination}
+                l1={ele.places[0]}
+                l2={ele.places[1]}
+                l3={ele.places[2]}></Results>
+            </MotionDiv>
+            {i === 0 && (
+              <div className="mt-[70px] w-[929px] border-2 border-t-ggreen-dark"></div>
+            )}
+          </>
+        );
+      })}
+      {/* <MotionDiv mode="left" delay={0.2} classNames="mx-auto mt-36">
         <Results
           profile={'Foodie'}
           destination={'Singapore'}
@@ -32,7 +57,7 @@ export default function Home() {
           l1={'Labrador Park'}
           l2={'Gardens by the Bay'}
           l3={'Sentosa'}></Results>
-      </MotionDiv>
+      </MotionDiv> */}
 
       <MotionDiv
         mode="up"
