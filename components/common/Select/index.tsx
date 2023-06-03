@@ -1,12 +1,7 @@
 'use client';
-import { Fragment, FC, useState } from 'react';
+import { Fragment, FC, useState, useImperativeHandle, forwardRef } from 'react';
 import { Listbox, Transition } from '@headlessui/react';
 import SvgIcon from '../SvgIcon';
-import {
-  CheckIcon,
-  ChevronUpDownIcon,
-  ChevronDownIcon,
-} from '@heroicons/react/20/solid';
 
 type Des = ['Philippines', 'Singapore', 'Vietnam'];
 type Dud = [
@@ -24,8 +19,10 @@ type TProps = {
     | 'Travel Audience Profile 2';
 };
 
-const Select: FC<TProps> = ({ options, title }) => {
+const Select: FC<TProps> = forwardRef(function Select({ options, title }, ref) {
   const [selected, setSelected] = useState(options[0]);
+
+  useImperativeHandle(ref, () => selected);
 
   return (
     <div className="w-full">
@@ -62,6 +59,6 @@ const Select: FC<TProps> = ({ options, title }) => {
       </Listbox>
     </div>
   );
-};
+});
 
 export default Select;

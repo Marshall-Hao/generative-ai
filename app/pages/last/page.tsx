@@ -6,8 +6,11 @@ import Button from '@/components/common/Button';
 import Link from 'next/link';
 import GreenPingDiv from '@/components/common/GreenPingDiv';
 import VideoCard from '@/components/common/VideoCard';
+import useGenerativestroe from '@/store';
 
 export default function Home() {
+  const result = useGenerativestroe((state) => state.result);
+
   return (
     <MotionMain bgColor="bg-ggreen-xlight">
       <MotionDiv mode="down" delay={0.2} classNames="mt-36">
@@ -25,13 +28,13 @@ export default function Home() {
       </MotionDiv>
 
       <div className="mt-[133px] flex w-screen justify-evenly">
-        <MotionDiv mode="left" delay={0.3}>
-          <VideoCard></VideoCard>
-        </MotionDiv>
-
-        <MotionDiv mode="right" delay={0.3}>
-          <VideoCard></VideoCard>
-        </MotionDiv>
+        {result?.audience_places?.map((ele, i) => {
+          return (
+            <MotionDiv mode="left" delay={0.3} key={i}>
+              <VideoCard videoUrl={ele.video_url}></VideoCard>
+            </MotionDiv>
+          );
+        })}
       </div>
 
       <MotionDiv mode="down" delay={0.5} classNames="justify-self-end mt-auto">
