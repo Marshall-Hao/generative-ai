@@ -62,7 +62,7 @@ export default function Home() {
       <MotionDiv
         mode="up"
         delay={0.2}
-        classNames="flex w-[929px] justify-evenly mt-[149px]">
+        classNames="flex w-[929px] justify-evenly absolute top-[1670px]">
         <Link href="/pages/query">
           <Button
             width={'w-[388px]'}

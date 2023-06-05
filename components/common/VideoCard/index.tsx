@@ -17,7 +17,10 @@ const VideoCard: FC<TProps> = ({ videoUrl }) => {
         </div>
       </div>
       <div className="absolute flex h-full w-full justify-center">
-        <div className="mt-[185px] h-[350px] w-[300px] bg-white"></div>
+        <div className="mt-[185px]">
+          {' '}
+          <video autoPlay muted src={videoUrl} className="h-[350px]"></video>
+        </div>
       </div>
       <div className="absolute -right-[115px] top-[160px] h-full">
         <SvgIcon href="results_icons"></SvgIcon>
