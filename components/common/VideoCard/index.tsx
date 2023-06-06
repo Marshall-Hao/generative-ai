@@ -11,24 +11,12 @@ const VideoCard: FC<TProps> = ({ videoUrl }) => {
 
   return (
     <div className="relative h-[779px] w-[438px]">
-      {/* <video
-        autoPlay
-        muted
-        src={videoUrl}
-        className="relative z-10 h-[779px] w-[438px]"></video> */}
-      {/* <div className="flex justify-center">
-        <div className="absolute mt-8 h-[87px] w-[107px]">
-          <SvgIcon href="hotel_logo"></SvgIcon>
-        </div>
-      </div> */}
       <div className="absolute flex h-full w-full justify-center">
-        {/* <div className="mt-[185px]"> */}{' '}
         <video
           autoPlay
           muted
           src={videoUrl}
           className="h-[779px] w-[438px]"></video>
-        {/* </div> */}
       </div>
       <div className="absolute h-full w-full bg-[#25282A]/25"></div>
       <div className="flex justify-center">
