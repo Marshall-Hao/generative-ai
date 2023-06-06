@@ -10,22 +10,36 @@ const VideoCard: FC<TProps> = ({ videoUrl }) => {
   console.log('videoUrl', videoUrl);
 
   return (
-    <div className="relative h-[779px] w-[438px] bg-[#596969]">
+    <div className="relative h-[779px] w-[438px]">
+      {/* <video
+        autoPlay
+        muted
+        src={videoUrl}
+        className="relative z-10 h-[779px] w-[438px]"></video> */}
+      {/* <div className="flex justify-center">
+        <div className="absolute mt-8 h-[87px] w-[107px]">
+          <SvgIcon href="hotel_logo"></SvgIcon>
+        </div>
+      </div> */}
+      <div className="absolute flex h-full w-full justify-center">
+        {/* <div className="mt-[185px]"> */}{' '}
+        <video
+          autoPlay
+          muted
+          src={videoUrl}
+          className="h-[779px] w-[438px]"></video>
+        {/* </div> */}
+      </div>
+      <div className="absolute h-full w-full bg-[#25282A]/25"></div>
       <div className="flex justify-center">
         <div className="absolute mt-8 h-[87px] w-[107px]">
           <SvgIcon href="hotel_logo"></SvgIcon>
         </div>
       </div>
-      <div className="absolute flex h-full w-full justify-center">
-        <div className="mt-[185px]">
-          {' '}
-          <video autoPlay muted src={videoUrl} className="h-[350px]"></video>
-        </div>
-      </div>
       <div className="absolute -right-[115px] top-[160px] h-full">
         <SvgIcon href="results_icons"></SvgIcon>
       </div>
-      <div className="absolute bottom-0 left-0 mb-8 ml-5 h-[136px] w-[352px] rounded-[28px] bg-[#25282A]/25 p-4">
+      <div className="absolute bottom-0 left-0 mb-8 ml-5 h-[136px] w-[352px] rounded-[28px] bg-[#25282A]/50 p-4">
         <div className="mb-2 flex">
           <div className="h-12 w-12 rounded-full bg-white"></div>
           <div className="ml-4">
