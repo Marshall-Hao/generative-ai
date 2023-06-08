@@ -9,20 +9,23 @@ import GreenPingDiv from '@/components/common/GreenPingDiv';
 export default function Home() {
   return (
     <MotionMain bgColor="bg-ggreen-xlight">
-      <MotionDiv mode="down" delay={0.2} classNames="mt-36">
+      <MotionDiv mode="down" delay={0.2} classNames="mt-36 mb-[369px]">
         <GreenPingDiv>
           <SvgIcon href="world" fill="#34A853"></SvgIcon>
         </GreenPingDiv>
       </MotionDiv>
 
-      <MotionDiv
-        mode="up"
-        delay={0.4}
-        classNames="h-[608px] w-screen bg-white p-24 mt-[369px] mb-[275px]">
-        <SvgIcon href="building"></SvgIcon>
+      <MotionDiv mode="up" delay={0.4}>
+        {/* classNames="h-[608px] w-screen bg-white p-24"> */}
+        {/* <SvgIcon href="building"></SvgIcon> */}
+        <iframe
+          className="h-[608px] w-screen"
+          src="https://www.youtube.com/embed/ZZ-lVVsrwKU?loop=1&autoplay=1&controls=0&rel=0"
+          title="Google STB2 4K 0601 Travel GenAI"
+          allow="accelerometer; autoplay;"></iframe>
       </MotionDiv>
 
-      <div className="mb-14 text-center">
+      <div className="mb-14 mt-[275px] text-center">
         <p className="text-3xl text-ggreen-normal">
           Please wait while your video <br /> is being generated...
         </p>
