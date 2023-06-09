@@ -19,11 +19,13 @@ export default function Home() {
 
       <MotionDiv mode="down" delay={0.4}>
         <section className="mb-[92px] mt-40 text-center">
-          <h3 className="text-[65px]">Welcome to</h3>
-          <h1 className="mx-auto mb-[92px] mt-8	block  px-11 text-[98px] leading-tight">
+          <h3 className="text-[65px] text-white">Welcome to</h3>
+          <h1 className="mx-auto mb-[92px] mt-8	block  px-11 text-[98px] leading-tight text-white">
             Custom Generative AI for a Travel Advertiser
           </h1>
-          <p className=" text-[40px]">Where can we take you today?</p>
+          <p className=" text-[40px] text-white">
+            Where can we take you today?
+          </p>
         </section>
       </MotionDiv>
 
@@ -39,7 +41,7 @@ export default function Home() {
 
       <MotionDiv mode="up" delay={0.4}>
         <div className="mb-9 mt-[100px] text-center">
-          <p className="max-w-3xl text-3xl">
+          <p className="max-w-3xl text-3xl text-white">
             Not an official Google product. <br /> For demonstration purpose
             only
           </p>
