@@ -7,6 +7,8 @@ type TProps = {
   height: string;
   bg: string;
   text: string;
+  onClick?: () => undefined;
+  disabled?: boolean;
 };
 
 const Button: FC<TProps> = ({
@@ -15,9 +17,11 @@ const Button: FC<TProps> = ({
   height = '',
   bg = '',
   text = '',
+  onClick = () => undefined,
+  disabled = false,
 }) => {
   const divClass = clsx(
-    'flex items-center justify-center rounded-full',
+    'flex items-center justify-center rounded-full transition-color disabled:bg-ggreen-light',
     width,
     height,
     bg
@@ -25,9 +29,9 @@ const Button: FC<TProps> = ({
   const textClass = clsx('animate-pulse text-4xl', text);
 
   return (
-    <div className={divClass}>
+    <button className={divClass} onClick={onClick} disabled={disabled}>
       <p className={textClass}>{children}</p>
-    </div>
+    </button>
   );
 };
 

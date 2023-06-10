@@ -3,10 +3,17 @@ import SvgIcon from '@/components/common/SvgIcon';
 import MotionMain from '@/components/common/MotionMain';
 import MotionDiv from '@/components/common/MotionDiv';
 import Button from '@/components/common/Button';
-import Link from 'next/link';
+
 import GreenPingDiv from '@/components/common/GreenPingDiv';
+import { useRouter } from 'next/navigation';
+import useGenerativestroe from '@/store';
 
 export default function Home() {
+  const { push } = useRouter();
+  const videoUrls = useGenerativestroe((state) => state.videoUrls);
+
+  const onClick = () => push('/pages/last');
+
   return (
     <MotionMain bgColor="bg-ggreen-xlight">
       <MotionDiv mode="down" delay={0.2} classNames="mt-36 mb-[369px]">
@@ -30,47 +37,47 @@ export default function Home() {
         </p>
       </div>
 
-      <Link href="/pages/last">
-        <MotionDiv
-          mode="down"
-          delay={0.5}
-          classNames="justify-self-end mt-auto relative">
-          <svg
-            width="1000"
-            height="220"
-            viewBox="0 0 1000 220"
-            className="absolute -left-2.5 -top-2.5">
-            <rect
-              x="5"
-              y="5"
-              width="525"
-              height="100"
-              rx="50"
-              ry="50"
-              fill="none"
-              stroke="#BBBBBB"
-              stroke-width="12"></rect>
-            <rect
-              x="5"
-              y="5"
-              width="525"
-              height="100"
-              fill="none"
-              stroke="#34A853"
-              rx="50"
-              ry="50"
-              stroke-width="12"
-              className="rect-animation"></rect>
-          </svg>
-          <Button
-            width={'w-[516px]'}
-            height={'h-[89px]'}
-            bg={'bg-ggreen-light'}
-            text={'text-white'}>
-            Next
-          </Button>
-        </MotionDiv>
-      </Link>
+      <MotionDiv
+        mode="down"
+        delay={0.5}
+        classNames="justify-self-end mt-auto relative">
+        <svg
+          width="1000"
+          height="220"
+          viewBox="0 0 1000 220"
+          className="absolute -left-2.5 -top-2.5">
+          <rect
+            x="5"
+            y="5"
+            width="525"
+            height="100"
+            rx="50"
+            ry="50"
+            fill="none"
+            stroke="#BBBBBB"
+            stroke-width="12"></rect>
+          <rect
+            x="5"
+            y="5"
+            width="525"
+            height="100"
+            fill="none"
+            stroke="#34A853"
+            rx="50"
+            ry="50"
+            stroke-width="12"
+            className="rect-animation"></rect>
+        </svg>
+        <Button
+          width={'w-[516px]'}
+          height={'h-[89px]'}
+          bg={'bg-ggreen-normal'}
+          text={'text-white'}
+          disabled={videoUrls.length === 0}
+          onClick={onClick}>
+          {videoUrls.length === 0 ? 'Generating...' : 'Next'}
+        </Button>
+      </MotionDiv>
     </MotionMain>
   );
 }

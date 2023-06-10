@@ -36,8 +36,7 @@ const MotionMain: FC<TProps> = ({
       exit="exit"
       variants={variants}
       transition={{ duration: 0.4, type: 'easeInOut', delay }}
-      className={actualClass}
-      exitBeforeEnter>
+      className={actualClass}>
       {children}
     </motion.main>
   );

@@ -2,8 +2,7 @@ import { create } from 'zustand';
 
 type TResult = {
   audience: string;
-  places: string[];
-  video_url: string;
+  places: { description: string; name: string }[];
 };
 
 type TAud = {
@@ -12,13 +11,17 @@ type TAud = {
 };
 
 type TStore = {
+  videoUrls: string[];
   result: TAud;
   setResult: (value: TAud) => void;
+  setvideoUrls: (value: any) => void;
 };
 
 const useGenerativestroe = create<TStore>((set) => ({
+  videoUrls: [],
   result: {},
   setResult: (value) => set(() => ({ result: value })),
+  setvideoUrls: (value) => set(() => ({ videoUrls: value })),
 }));
 
 export default useGenerativestroe;

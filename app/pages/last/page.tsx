@@ -9,7 +9,8 @@ import VideoCard from '@/components/common/VideoCard';
 import useGenerativestroe from '@/store';
 
 export default function Home() {
-  const result = useGenerativestroe((state) => state.result);
+  const videoUrls = useGenerativestroe((state) => state.videoUrls);
+  const setvideoUrls = useGenerativestroe((state) => state.setvideoUrls);
 
   return (
     <MotionMain bgColor="bg-ggreen-xlight">
@@ -28,10 +29,10 @@ export default function Home() {
       </MotionDiv>
 
       <div className="mt-[133px] flex w-screen justify-evenly">
-        {result?.audience_places?.map((ele, i) => {
+        {videoUrls?.map((ele, i) => {
           return (
             <MotionDiv mode="left" delay={0.3} key={i}>
-              <VideoCard videoUrl={ele.video_url}></VideoCard>
+              <VideoCard videoUrl={ele}></VideoCard>
             </MotionDiv>
           );
         })}
@@ -43,7 +44,8 @@ export default function Home() {
             width={'w-[516px]'}
             height={'h-[89px]'}
             bg={'bg-ggreen-normal'}
-            text={'text-white'}>
+            text={'text-white'}
+            onClick={() => setvideoUrls([])}>
             Start Again
           </Button>
         </Link>

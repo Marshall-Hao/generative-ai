@@ -7,11 +7,37 @@ import Link from 'next/link';
 import PageHeader from '@/components/common/PageHeader';
 import Results from '@/components/common/Results';
 import useGenerativestroe from '@/store';
+import { useRouter } from 'next/navigation';
 
 export default function Home() {
   const result = useGenerativestroe((state) => state.result);
+  const setvideoUrls = useGenerativestroe((state) => state.setvideoUrls);
+  const { push, prefetch } = useRouter();
 
-  console.log('result', result);
+  // console.log('result', result);
+  const onClick = () => {
+    const res = fetch('https://generate-videos-bh2e4ujswa-uc.a.run.app', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        destination: result.destination,
+        audience_places: result.audience_places,
+      }),
+    });
+    res
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.audience_places) {
+          prefetch('/pages/last');
+          setvideoUrls(data.audience_places.map((ele: any) => ele.video_url));
+        }
+      });
+    push('/pages/video');
+  };
+
   return (
     <MotionMain bgColor="bg-ggreen-xlight">
       <PageHeader svg={<SvgIcon href="world" fill="#34A853"></SvgIcon>}>
@@ -29,36 +55,18 @@ export default function Home() {
               <Results
                 profile={ele.audience}
                 destination={result.destination}
-                l1={ele.places[0]}
-                l2={ele.places[1]}
-                l3={ele.places[2]}></Results>
+                l1={ele.places[0].name}
+                l2={ele.places[1].name}
+                l3={ele.places[2].name}></Results>
             </MotionDiv>
             {i === 0 && (
-              <div className="mt-[70px] w-[929px] border-2 border-t-ggreen-dark"></div>
+              <div
+                className="mt-[70px] w-[929px] border-2 border-t-ggreen-dark"
+                key={'div' + i}></div>
             )}
           </>
         );
       })}
-      {/* <MotionDiv mode="left" delay={0.2} classNames="mx-auto mt-36">
-        <Results
-          profile={'Foodie'}
-          destination={'Singapore'}
-          l1={'Lau Pa Sat'}
-          l2={'Bedok 85 Market'}
-          l3={'East Coast Lagoon'}></Results>
-      </MotionDiv>
-
-      <div className="mt-[70px] w-[929px] border-2 border-t-ggreen-dark"></div>
-
-      <MotionDiv mode="right" delay={0.2} classNames="mx-auto mt-[83px]">
-        <Results
-          profile={'Nature Goers'}
-          destination={'Singapore'}
-          l1={'Labrador Park'}
-          l2={'Gardens by the Bay'}
-          l3={'Sentosa'}></Results>
-      </MotionDiv> */}
-
       <MotionDiv
         mode="up"
         delay={0.2}
@@ -73,15 +81,14 @@ export default function Home() {
           </Button>
         </Link>
 
-        <Link href="/pages/video">
-          <Button
-            width={'w-[388px]'}
-            height={'h-[89px]'}
-            bg={'bg-ggreen-normal'}
-            text={'text-white'}>
-            Generate
-          </Button>
-        </Link>
+        <Button
+          width={'w-[388px]'}
+          height={'h-[89px]'}
+          bg={'bg-ggreen-normal'}
+          text={'text-white'}
+          onClick={onClick}>
+          Generate
+        </Button>
       </MotionDiv>
     </MotionMain>
   );
