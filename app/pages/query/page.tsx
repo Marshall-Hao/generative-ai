@@ -49,7 +49,7 @@ export default function Home() {
       <MotionDiv mode="up" delay={0.3} classNames="mt-12 text-center">
         <p className="text-3xl text-ggreen-normal">
           Try using generative AI to create ads for YouTube Shorts <br /> to
-          capture the attention of two traveler segments
+          capture the attention of two traveler segments.
         </p>
       </MotionDiv>
 

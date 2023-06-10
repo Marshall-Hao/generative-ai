@@ -43,7 +43,7 @@ export default function Home() {
         <div className="mb-9 mt-[100px] text-center">
           <p className="max-w-3xl text-3xl text-white">
             Not an official Google product. <br /> For demonstration purpose
-            only
+            only.
           </p>
         </div>
       </MotionDiv>
