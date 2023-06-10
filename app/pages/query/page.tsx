@@ -6,19 +6,23 @@ import Button from '@/components/common/Button';
 import Link from 'next/link';
 import PageHeader from '@/components/common/PageHeader';
 import Select from '@/components/common/Select';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import useGenerativestroe from '@/store';
+import { useRouter } from 'next/navigation';
 
 export default function Home() {
   const qOne = useRef();
   const qTwo = useRef();
   const qThree = useRef();
+  const { push } = useRouter();
+  const [loading, setLoading] = useState(false);
 
   const setResult = useGenerativestroe((state) => state.setResult);
 
   const onClick = () => {
+    setLoading(true);
     const res = fetch(
-      'https://us-central1-project-916-387104.cloudfunctions.net/generate-videos',
+      'https://us-central1-project-916-387104.cloudfunctions.net/get-recommended-places',
       {
         method: 'POST',
         headers: {
@@ -35,8 +39,11 @@ export default function Home() {
     res
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
-        setResult(data);
+        if (data.destination) {
+          setLoading(false);
+          push('/pages/results');
+          setResult(data);
+        }
       });
   };
 
@@ -71,6 +78,7 @@ export default function Home() {
           title="Travel Audience Profile 1"
           ref={qTwo}></Select>
         <Select
+          picked={1}
           options={[
             'Foodies',
             'Adventure Seekers',
@@ -82,15 +90,15 @@ export default function Home() {
       </MotionDiv>
 
       <MotionDiv mode="down" delay={0.5} classNames="justify-self-end mt-auto">
-        <Link href="/pages/results" onClick={onClick}>
-          <Button
-            width={'w-[516px]'}
-            height={'h-[89px]'}
-            bg={'bg-ggreen-normal'}
-            text={'text-white'}>
-            Next
-          </Button>
-        </Link>
+        <Button
+          width={'w-[516px]'}
+          height={'h-[89px]'}
+          bg={'bg-ggreen-normal'}
+          text={'text-white'}
+          onClick={onClick}
+          disabled={loading}>
+          {loading ? 'Loading' : 'Next'}
+        </Button>
       </MotionDiv>
     </MotionMain>
   );

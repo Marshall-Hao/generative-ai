@@ -17,10 +17,14 @@ type TProps = {
     | 'Travel Destination'
     | 'Travel Audience Profile 1'
     | 'Travel Audience Profile 2';
+  picked?: number;
 };
 
-const Select: FC<TProps> = forwardRef(function Select({ options, title }, ref) {
-  const [selected, setSelected] = useState(options[0]);
+const Select: FC<TProps> = forwardRef(function Select(
+  { options, title, picked = 0 },
+  ref
+) {
+  const [selected, setSelected] = useState(options[picked]);
 
   useImperativeHandle(ref, () => selected);
 
