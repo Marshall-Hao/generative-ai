@@ -20,9 +20,8 @@ export default function Home() {
         {/* <SvgIcon href="building"></SvgIcon> */}
         <iframe
           className="h-[608px] w-screen"
-          src="https://www.youtube.com/embed/ZZ-lVVsrwKU?loop=1&autoplay=1&controls=0&rel=0"
-          title="Google STB2 4K 0601 Travel GenAI"
-          allow="accelerometer; autoplay;"></iframe>
+          src="https://player.vimeo.com/video/834796966?h=7de55f2f94&autoplay=1&loop=1&title=0&byline=0&portrait=0"
+          allow="autoplay"></iframe>
       </MotionDiv>
 
       <div className="mb-14 mt-[275px] text-center">
