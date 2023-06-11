@@ -16,7 +16,7 @@ const Results: FC<TProps> = ({ profile, destination, l1, l2, l3 }) => {
         the following places <br /> in{' '}
         <strong className="text-ggreen-dark">{destination}</strong> to visit.
       </p>
-      <div className="mx-auto mt-9 h-[236px] w-[929px] rounded-[32px] bg-ggreen-light px-24 py-8">
+      <div className="mx-auto mt-9 h-[270px] w-[929px] rounded-[32px] bg-ggreen-light px-24 py-8">
         <ul className="list-disc text-[38px] text-ggreen-dark">
           <li>{l1}</li>
           <li>{l2}</li>
