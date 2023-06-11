@@ -2,7 +2,20 @@ import './globals.css';
 import localFont from 'next/font/local';
 import Script from 'next/script';
 
-const googleSans = localFont({ src: '../public/GoogleSans/Regular.ttf' });
+const googleSans = localFont({
+  src: [
+    {
+      path: '../public/GoogleSans/Regular.ttf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../public/GoogleSans/Bold.ttf',
+      weight: '700',
+      style: 'bold',
+    },
+  ],
+});
 
 export const metadata = {
   title: 'Generative AI',
