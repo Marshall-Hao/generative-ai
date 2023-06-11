@@ -33,7 +33,9 @@ export default function Home() {
 
       <div className="mb-14 mt-[275px] text-center">
         <p className="text-3xl text-ggreen-normal">
-          Please wait while your video <br /> is being generated...
+          {videoUrls.length === 0
+            ? ' Please wait while your video is being generated...'
+            : 'Your video is generated.'}
         </p>
       </div>
 

@@ -9,6 +9,7 @@ import VideoCard from '@/components/common/VideoCard';
 import useGenerativestroe from '@/store';
 
 export default function Home() {
+  const result = useGenerativestroe((state) => state.result);
   const videoUrls = useGenerativestroe((state) => state.videoUrls);
   const setvideoUrls = useGenerativestroe((state) => state.setvideoUrls);
 
@@ -20,10 +21,15 @@ export default function Home() {
         </GreenPingDiv>
       </MotionDiv>
       <MotionDiv mode="up" delay={0.3} classNames="mt-16 text-center">
-        <h1 className="mx-auto max-w-3xl text-[60px] leading-tight text-ggreen-normal">
+        <h1 className="mx-auto max-w-4xl text-[60px] leading-tight text-ggreen-normal">
           Here are the video ads generated for the <br />{' '}
-          <strong className="text-ggreen-dark">Foodie</strong> and{' '}
-          <strong className="text-ggreen-dark">Nature Goers</strong> audience
+          <span className="text-ggreen-dark">
+            {result.audience_places[0]['audience']}
+          </span>{' '}
+          and{' '}
+          <span className="text-ggreen-dark">
+            {result.audience_places[1]['audience']}
+          </span>{' '}
           segments
         </h1>
       </MotionDiv>
