@@ -24,11 +24,11 @@ export default function Home() {
         <h1 className="mx-auto max-w-4xl text-[60px] leading-tight text-ggreen-normal">
           Here are the video ads generated for the <br />{' '}
           <span className="text-ggreen-dark">
-            {result.audience_places[0]['audience']}
+            {result?.audience_places[0]['audience']}
           </span>{' '}
           and{' '}
           <span className="text-ggreen-dark">
-            {result.audience_places[1]['audience']}
+            {result?.audience_places[1]['audience']}
           </span>{' '}
           segments
         </h1>
